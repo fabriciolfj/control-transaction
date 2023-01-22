@@ -1,0 +1,1 @@
+./mvnw install -Dnative -Dquarkus.native.container-build=true -Dquarkus.native.container-runtime=docker

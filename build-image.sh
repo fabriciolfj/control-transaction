@@ -1,0 +1,1 @@
+mvn clean install -Dquarkus.container-image.build=true
