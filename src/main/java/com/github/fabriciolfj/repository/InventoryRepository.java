@@ -5,14 +5,13 @@ import io.quarkus.hibernate.orm.panache.PanacheRepository;
 
 import javax.enterprise.context.ApplicationScoped;
 import javax.persistence.LockModeType;
-import java.util.List;
 import java.util.Optional;
 
 @ApplicationScoped
 public class InventoryRepository implements PanacheRepository<Inventory> {
 
-    public void save(final Inventory inventory) {
-        this.save(inventory);
+    public void executePersist(final Inventory inventory) {
+        this.persist(inventory);
     }
 
     public Optional<Inventory> findLast(final String product) {

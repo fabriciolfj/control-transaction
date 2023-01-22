@@ -16,8 +16,8 @@ public class InventoryService {
     private final InventoryRepository repository;
 
     @Transactional(value = Transactional.TxType.REQUIRED)
-    public void save(final Inventory inventory) {
-        repository.save(inventory);
+    public void saveInventory(final Inventory inventory) {
+        repository.executePersist(inventory);
     }
 
     @Transactional(value = Transactional.TxType.REQUIRED)
@@ -30,6 +30,6 @@ public class InventoryService {
                 })
                 .orElseThrow(() -> new InventoryNotFoundException());
 
-        repository.save(result);
+        repository.executePersist(result);
     }
 }
